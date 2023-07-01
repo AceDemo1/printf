@@ -5,7 +5,7 @@
  * @format: format.
  * Return: Printed chars.
  */
-int _printf(const char *fmt, ...)
+int _printf(const char *format, ...)
 {
 	int i, printed = 0, printed_chars = 0;
 	int flags, width, precision, size, buff_ind = 0;
@@ -15,13 +15,13 @@ int _printf(const char *fmt, ...)
 	if (fmt == NULL)
 		return (-1);
 
-	va_start(arr, fmt);
+	va_start(arr, format);
 
-	for (i = 0; fmt && fmt[i] != '\0'; i++)
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
-		if (fmt[i] != '%')
+		if (format[i] != '%')
 		{
-			buffer[buff_ind++] = fmt[i];
+			buffer[buff_ind++] = format[i];
 			if (buff_ind == BUFF_SIZE)
 				print_buffer(buffer, &buff_ind);
 			printed_chars++;
@@ -29,12 +29,12 @@ int _printf(const char *fmt, ...)
 		else
 		{
 			print_buffer(buffer, &buff_ind);
-			flags = get_flags(fmt, &i);
-			width = get_width(fmt, &i, arr);
+			flags = get_flags(format, &i);
+			width = get_width(format, &i, arr);
 			precision = get_precision(fmt, &i, arr);
-			size = get_size(fmt, &i);
+			size = get_size(format, &i);
 			++i;
-			printed = handle_print(fmt, &i, arr, buffer,
+			printed = handle_print(format, &i, arr, buffer,
 				flags, width, precision, size);
 			if (printed == -1)
 				return (-1);
