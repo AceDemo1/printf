@@ -20,13 +20,13 @@ int print_pointer(va_list types, char buffer[],
 	void *addrs = va_arg(types, void *);
 
 	(void)width;
-	UNUSED(size);
+	(void)size;
 
 	if (addrs == NULL)
 		return (write(1, "(nil)", 5));
 
 	buffer[BUFF_SIZE - 1] = '\0';
-	UNUSED(precision);
+	(void)precision;
 
 	num_addrs = (unsigned long)addrs;
 
@@ -50,17 +50,15 @@ int print_pointer(va_list types, char buffer[],
 	return (write_pointer(buffer, ind, length,
 		width, flags, padd, extra_c, padd_start));
 }
-
-/************************* PRINT NON PRINTABLE *************************/
 /**
- * print_non_printable - Prints ascii codes in hexa of non printable chars
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed
+ * print_non_printable - Prints ascii codes
+ * @types: List of args
+ * @buffer: Buffer array
+ * @flags:  Calculate flags
+ * @width: width
+ * @precision: Precision specs
+ * @size: Size
+ * Return: No of characters
  */
 int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
@@ -68,10 +66,10 @@ int print_non_printable(va_list types, char buffer[],
 	int i = 0, offset = 0;
 	char *str = va_arg(types, char *);
 
-	UNUSED(flags);
-	UNUSED(width);
-	UNUSED(precision);
-	UNUSED(size);
+	(void)flags;
+	(void)width;
+	(void)precision;
+	(void)size;
 
 	if (str == NULL)
 		return (write(1, "(null)", 6));
@@ -91,7 +89,7 @@ int print_non_printable(va_list types, char buffer[],
 	return (write(1, buffer, i + offset));
 }
 
-/************************* PRINT REVERSE *************************/
+
 /**
  * print_reverse - Prints reverse string.
  * @types: Lista of arguments
