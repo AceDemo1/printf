@@ -1,15 +1,14 @@
 #include "main.h"
 
-/****************** PRINT POINTER ******************/
 /**
- * print_pointer - Prints the value of a pointer variable
- * @types: List a of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed.
+ * print_pointer - Prints a pointer variable
+ * @types: List of args
+ * @buffer: Buffer array
+ * @flags:  Calculates flags
+ * @width: width
+ * @precision: Precision specs
+ * @size: Size
+ * Return: No of characters.
  */
 int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
@@ -20,7 +19,7 @@ int print_pointer(va_list types, char buffer[],
 	char map_to[] = "0123456789abcdef";
 	void *addrs = va_arg(types, void *);
 
-	UNUSED(width);
+	(void)width;
 	UNUSED(size);
 
 	if (addrs == NULL)
