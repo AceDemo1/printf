@@ -23,12 +23,12 @@ int _printf(const char *format, ...)
 		{
 			buffer[buff_ind++] = format[i];
 			if (buff_ind == BUFF_SIZE)
-				print_buffer(buffer, &buff_ind);
+				print_buff(buffer, &buff_ind);
 			printed_chars++;
 		}
 		else
 		{
-			print_buffer(buffer, &buff_ind);
+			print_buff(buffer, &buff_ind);
 			flags = get_flags(format, &i);
 			width = get_width(format, &i, arr);
 			precision = get_precision(format, &i, arr);
