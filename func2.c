@@ -88,16 +88,14 @@ int print_non_printable(va_list types, char buffer[],
 
 	return (write(1, buffer, i + offset));
 }
-
-
 /**
  * print_reverse - Prints reverse string.
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
+ * @types: List of args
+ * @buffer: Buffer array
+ * @flags:  Calculates flags
+ * @width: width
+ * @precision: Precision spec
+ * @size: Size
  * Return: Numbers of chars printed
  */
 
@@ -105,22 +103,25 @@ int print_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char *str;
-	int i, count = 0;
+	int i, count;
+	
+	count = 0;
+	i = 0;
 
-	UNUSED(buffer);
-	UNUSED(flags);
-	UNUSED(width);
-	UNUSED(size);
+	(void)buffer;
+	(void)flags;
+	(void)width;
+	(void)size;
 
 	str = va_arg(types, char *);
 
 	if (str == NULL)
 	{
-		UNUSED(precision);
+		(void)precision;
 
 		str = ")Null(";
 	}
-	for (i = 0; str[i]; i++)
+	for (; str[i]; i++)
 		;
 
 	for (i = i - 1; i >= 0; i--)
@@ -132,16 +133,15 @@ int print_reverse(va_list types, char buffer[],
 	}
 	return (count);
 }
-/************************* PRINT A STRING IN ROT13 *************************/
 /**
  * print_rot13string - Print a string in rot13.
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Numbers of chars printed
+ * @types: List of args
+ * @buffer: Buffer array
+ * @flags:  Calculates flags
+ * @width: width
+ * @precision: Precision specs
+ * @size: Size
+ * Return: No of chars 
  */
 int print_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
@@ -154,11 +154,11 @@ int print_rot13string(va_list types, char buffer[],
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	str = va_arg(types, char *);
-	UNUSED(buffer);
-	UNUSED(flags);
-	UNUSED(width);
-	UNUSED(precision);
-	UNUSED(size);
+	(void)flags;
+	(void)size;
+	(void)width;
+	(void)precision;
+	(void)buffer;
 
 	if (str == NULL)
 		str = "(AHYY)";
