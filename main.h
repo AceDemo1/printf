@@ -1,9 +1,10 @@
-﻿#ifndef MAIN_H
+#ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdio.h>
 
+#define UNUNSED(x) (void)(x)
 #define BUFF_SIZE 1024
 
 #define F_MINUS 1
