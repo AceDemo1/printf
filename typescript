@@ -1,0 +1,9 @@
+Script started on 2023-06-06 07:27:00-07:00 [TERM="xterm" TTY="/dev/pts/7" COLUMNS="86" LINES="40"]
+# ^[[D    
+# sads
+sh: 2: sads: not found
+# q^[^[:wq
+sh: 3: q:wq: not found
+# exit
+
+Script done on 2023-06-06 07:27:28-07:00 [COMMAND_EXIT_CODE="127"]
