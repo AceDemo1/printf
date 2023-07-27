@@ -1,4 +1,5 @@
-#include "simple_shell.h"
+#include "shell.h"
+
 void free_args(char **args, char **front);
 char *get_pid(void);
 char *get_env_value(char *beginning, int len);

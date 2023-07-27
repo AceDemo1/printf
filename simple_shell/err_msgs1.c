@@ -1,4 +1,5 @@
-#include "simple_shell.h"
+#include "shell.h"
+
 char *error_env(char **args);
 char *error_1(char **args);
 char *error_2_exit(char **args);
